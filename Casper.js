@@ -1,13 +1,10 @@
-﻿//进行
+//进行
 ( function() {
     //初始化参数
     var head = document.head || document.getElementsByTagName('head')[0];
     var keyPrex = 'ucMaxCms-';
-    var jsName={path:"http://uc.gre/gre/butterfly/res/maxcms/app/js/pageJson.js",keyName:keyPrex+"js",ver:"0.0.3"}
-    var cssName={path:"http://uc.gre/gre/butterfly/res/maxcms/app/css/styleJson.css",keyName:keyPrex+"css",ver:"0.0.3"}
-    //var imgName={path:"http://uc.gre/gre/butterfly/res/maxcms/app/js/imgJson.gif",keyName:keyPrex+"gif",ver:"0.0.0"}
-    // var jsName={path:"http://localhost:9090/dev/FE/js/pageJson.js",keyName:keyPrex+"js",ver:"1.0.0"}
-    // var cssName={path:"http://localhost:9090/dev/FE/css/styleJson.css",keyName:keyPrex+"css",ver:"1.0.0"}
+    var jsName={path:"/app/js/pageJson.js",keyName:keyPrex+"js",ver:"0.0.3"}
+    var cssName={path:"/app/css/styleJson.css",keyName:keyPrex+"css",ver:"0.0.3"}
     //存取方法
     var GS={
         set:function (key, val) {
@@ -86,7 +83,6 @@
             }
         }
     }
-
 
     /*! 加载外部资源 AJAX
      var getUrl = function(cacheName ) {
@@ -192,22 +188,6 @@
     var showLoad=function(){
 
         var loadStr="<style type=\"text/css\">#ucload{position: absolute;height:100%;width:100%;background: #fff;top: 0;left: 0;z-index: 99999;}.loading {margin-top:-25px;width:100%;min-height:50px;text-align:center;position:absolute;left:0;top:48%;}.loading span {display:inline-block;margin-right:5px;width:10px;height:10px;overflow:hidden;background:#2a8ae0; -webkit-animation:ani_loading 0.5s linear infinite;}.loading .txt {margin-top:5px;font-size:14px;color:#ccc;}@-webkit-keyframes ani_loading {from {opacity: 1;}to {opacity: 0.1;}}.loading .s1 {-webkit-animation-delay: 0s;}.loading .s2 {-webkit-animation-delay: 0.1s;}.loading .s3 {-webkit-animation-delay: 0.2s;}.loading .s4 {-webkit-animation-delay: 0.3s;}.loading .s5 {-webkit-animation-delay: 0.4s;}.loading_img{text-align: center;font-size: 18px;color: #666;}.loading_img img{display: block;margin: 0 auto;margin-bottom: 30px;.margin-bottom: 3;margin-top: 20%;}</style>";
-       /* 暂时去除升级的时候进行动画提示
-        var imgStr=GS.get(imgName.keyName)
-        try
-        {
-            var imgObj=JSON.parse(imgStr);
-        }
-        catch(err)
-        {
-            imgStr="";
-        }
-        if (imgStr==null || imgStr==""){
-            loadStr=loadStr+"<div class=\"loading\"><span class=\"s1\"></span><span class=\"s2\"></span><span class=\"s3\"></span><span class=\"s4\"></span><span class=\"s5\"></span><div class=\"txt\">数据正在努力加载中</div></div>";
-        } else{
-            loadStr=loadStr+"<div class=\"loading_img\"><img src='"+imgObj.str+"'/>莫激动，激情总在缓冲后</div>";
-        }
-        */
         loadStr=loadStr+"<div class=\"loading\"><span class=\"s1\"></span><span class=\"s2\"></span><span class=\"s3\"></span><span class=\"s4\"></span><span class=\"s5\"></span><div class=\"txt\">数据正在努力加载中</div></div>";
         var loadDiv=document.createElement('div');
         loadDiv.id="ucload";
